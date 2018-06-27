@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <body>
+        <br>
+        <h1 align="center">COLLEGE DASHBOARD</h1><br><br>
+        <table align="center" border=1>
+            <tbody>
+                <tr>
+                    <td align="center">
+                        <h2><a href="/liststud"> Total students  </a></h2>
+                        <h1>{{row1}}</h1>
+                    </td>
+                    <td align="center">
+                        <h2><a href="/listbranch"> Total branches  </a></h2>
+                        <h1>{{row2}}</h1>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br><br>
+        <h1 align="center">Branch-wise Break-ups</h1>
+        <table align="center" border=1>
+            <tbody>
+                <tr>
+                    {% for res in res1 %}
+                    <td align="center">
+                        <h1>{{res[1]}}</h1><br>
+                        <h2>{{res[0]}}</h2>
+                    </td>                    
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+
+        
+    </body>
+</html>

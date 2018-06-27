@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1> List of Branches</h1>
+    <button onclick="location.href='http://127.0.0.1:5000/enterbranch'" type="button">Add Branch</button>
+    
+    <br><br>
+    <table border=1>
+        <thead>
+            <td><b>Branch Id</b></td>
+            <td><b>Branch Name</b></td>
+            <td><b>Delete</b></td>
+        </thead>
+        {% for row in rows%}
+        <tr>
+            <td>{{row["br_id"]}}</td>
+            <td>{{row["br_name"]}}</td>
+            
+            <td><form action="{{url_for('delete_record')}}" method="post">
+                <input type="hidden" name="tbname" value="branch"/>
+                <input type="hidden" name="val" value="{{row['br_id']}}"/><br>
+                    <button type="submit" value="submit" >X</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h5><a href="/">Go back to home page</a></h5>
+</body>
+</html>

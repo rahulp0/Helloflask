@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1> List of students</h1>
+    
+    <button onclick="location.href='http://127.0.0.1:5000/enterstudent'" type="button">Add Student</button>
+    <!--<h4><a href="/enterstudent">Add student</a></h4>-->
+    <br><br>
+    <table border=1>
+        <thead>
+            <td><b>Sid</b></td>
+            <td><b>Name</b></td>
+            <td><b>City</b></td>
+            <td><b>Branch Id</b></td>
+            <td><b>Phone</b></td>
+            <td><b>Semester</b></td>
+            <td><b>Delete</b></td>
+        </thead>
+        {% for row in rows%}
+        <tr>
+            <td>{{row["usn"]}}</td>
+            <td>{{row["name"]}}</td>
+            <td>{{row["city"]}}</td>
+            <td>{{row["BrId"]}}</td>
+            <td>{{row["phone"]}}</td>
+            <td>{{row["sem"]}}</td>
+            
+            <td><form action="{{url_for('delete_record')}}" method="post">
+               <!-- br_id={{row["br_id"]}}-->
+                <input type="hidden" name="tbname" value="student"/>
+                <input type="hidden" name="val" value="{{row['usn']}}"/><br>
+                    <button type="submit" value="submit" >X</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h5><a href="/">Go back to home page</a></h5>
+</body>
+</html>
