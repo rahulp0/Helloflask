@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table border=10>
+	<thead>
+	<td>Name</td>
+	<td>address</td>
+	<td>city</td>
+	<td>pin</td>
+
+
+     </thead>
+     {% for row in rows %}
+     <tr>
+     	<td>{{row["name"]}}</td>
+     	<td>{{row["addr"]}}</td>
+     	<td>{{row["city"]}}</td>
+     	<td>{{row["pin"]}}</td>
+
+     </tr>
+     {% endfor %}
+</table>
+</body>
+</html>
