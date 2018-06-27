@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table border=10>
+	<thead>
+	<td>Student ID</td>
+	<td>Name</td>
+	<td>City</td>
+	<td>Branch ID</td>
+     <td>Phone</td>
+     <td>Semester</td>
+     <td>Delete?</td>
+
+     </thead>
+     {% for row in rows %}
+
+
+     <tr>
+     	<td>{{row["sid"]}}</td>
+     	<td>{{row["name"]}}</td>
+     	<td>{{row["city"]}}</td>
+     	<td>{{row["bid"]}}</td>
+          <td>{{row["ph"]}}</td>
+          <td>{{row["sem"]}}</td>
+          <td><a href = "/stdntDtls/<sid>" value = "sid" >X</as>
+
+     </tr>
+     {% endfor %}
+</table>
+</body>
+</html>
